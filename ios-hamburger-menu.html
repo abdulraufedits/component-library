@@ -1,12 +1,32 @@
-<label for="menu-toggle" class="hamburger">
-                    <span class="bun bun-top">
-                        <span class="bun-crust bun-crust-top"></span>
-                    </span>
-                    <span class="bun bun-bottom">
-                        <span class="bun-crust bun-crust-bottom"></span>
-                    </span>
-</label>
+<body>
+  <div class="wrapper">
+    <label for="menu-toggle" class="hamburger">
+      <span class="bun bun-top">
+        <span class="bun-crust bun-crust-top"></span>
+      </span>
+      <span class="bun bun-bottom">
+        <span class="bun-crust bun-crust-bottom"></span>
+      </span>
+    </label>
+</div>
+  
+  
+  <script>
+  const menuBtn = document.querySelector('#menu-toggle');
+  menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('active');
+});
+</script>
+  </body>
 <style>
+  body{
+  height: 100vh;
+  }
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
 #menu-toggle{
     display: none;
 }
@@ -59,10 +79,3 @@
 }
 
 </style>
-
-<script>
-  const menuBtn = document.querySelector('#menu-toggle');
-  menuBtn.addEventListener('click', function () {
-    menuBtn.classList.toggle('active');
-});
-</script>
