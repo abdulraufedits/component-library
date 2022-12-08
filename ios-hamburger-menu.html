@@ -1,0 +1,68 @@
+<label for="menu-toggle" class="hamburger">
+                    <span class="bun bun-top">
+                        <span class="bun-crust bun-crust-top"></span>
+                    </span>
+                    <span class="bun bun-bottom">
+                        <span class="bun-crust bun-crust-bottom"></span>
+                    </span>
+                </label>
+<style>
+#menu-toggle{
+    display: none;
+}
+.hamburger{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    cursor: pointer;
+    margin: 0px 20px;
+}
+
+.bun{
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    transition: transform 180ms ease-out 150ms;
+}
+
+.bun-crust{
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    border-radius: 2px;
+    position: absolute;
+    left: 10%;
+    transition: transform 160ms ease 200ms;
+}
+
+.bun-crust-top{
+    top: 16px;
+    transform: translateY(-5px);
+}
+.bun-crust-bottom{
+    bottom: 16px;
+    transform: translateY(5px);
+}
+#menu-toggle.active + .hamburger .bun-top{
+    transform: rotate(45deg);
+    transform-origin: center;
+
+}
+#menu-toggle.active + .hamburger .bun-bottom{
+    transform: rotate(-45deg);
+}
+#menu-toggle.active + .hamburger .bun-crust-top, 
+#menu-toggle.active + .hamburger .bun-crust-bottom{
+    transform: none;
+    transition: transform 160ms ease-out ;
+}
+
+</style>
+
+<script>
+  const menuBtn = document.querySelector('#menu-toggle');
+  menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('active');
+});
+</script>
